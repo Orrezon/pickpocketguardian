@@ -30,6 +30,7 @@ public class PickpocketGuardianPlugin extends Plugin
 
 	private static final String OBJECT_URN = "Urn";
 	private static final String OBJECT_SARCOPHAGUS = "Sarcophagus";
+	private static final int OBJECT_SARCOPHAGUS_ID = 26626;
 	private static final String OBJECT_SPEARTRAP = "Speartrap";
 
 	private static final int MAX_DAMAGE_URN = 4;
@@ -51,6 +52,8 @@ public class PickpocketGuardianPlugin extends Plugin
 		int currentHealth = client.getBoostedSkillLevel(Skill.HITPOINTS);
 		String optionName = menuOptionClicked.getMenuEntry().getOption();
 		String targetName = menuOptionClicked.getMenuTarget().toString();
+		int targetId = menuOptionClicked.getId();
+
 		// Remove the text color of the object name.
 		targetName = targetName.substring(targetName.lastIndexOf(">") + 1);
 
@@ -69,7 +72,9 @@ public class PickpocketGuardianPlugin extends Plugin
 		}
 
 		// Prevent opening sarcophagus if setting is on.
-		if (config.getPreventSarcophagus() && targetName.contains(this.OBJECT_SARCOPHAGUS) && optionName.equals(this.OPTION_OPEN)) {
+		if (config.getPreventSarcophagus() && targetName.contains(this.OBJECT_SARCOPHAGUS) &&
+				optionName.equals(this.OPTION_OPEN) &&
+				targetId == OBJECT_SARCOPHAGUS_ID) {
 			menuOptionClicked.consume();
 			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Pickpocket Guardian prevented opening the sarcophagus.", "Pickpocket Safe Guard");
 		}
