@@ -18,4 +18,4 @@ Under the Pyramid Plunder section, Safe Urn Openings & Speartraps is selected by
 If you are having any problems with the Pickpocket Guardian, or have any feedback on how to make it better, please [create an issue](https://github.com/Orrezon/PickpocketGuardian/issues/new) within Github and provide details.
 
 ## Support Me
-If you would like to support me, and are able to, you can do so by subscribing or donating to my [Twitch](https://www.twitch.tv/batonpassgaming). Thank you!
+If you would like to support me, and are able to, you can do so by subscribing or donating to my [Twitch](https://www.twitch.tv/SirenWish). Thank you!
